@@ -1,0 +1,20 @@
+
+<% msg.err.forEach(err => {%>
+    <div class="error-container">
+        <p><%= err %></p>
+    </div>
+<%}); %>
+
+<style>
+    .error-container{
+    width: 90%;
+    padding: 8px;
+    margin: 5px;
+    text-align: center;
+    color: var(--light);
+    border-radius: 4px;
+    background-color: var(--danger);
+    font-size: 14px;
+    font-weight: 600;
+    }
+</style>

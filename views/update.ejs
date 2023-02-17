@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <script defer src="/js/all.min.js"></script>
+    <title>Update</title>
+  </head>
+  <body>
+    <nav>
+      <h1><a class="brand" href="">NOTIFY</a></h1>
+      <a class="notes-icon" href="/notes"
+        ><i class="fa-regular fa-note-sticky"></i
+      ></a>
+      <a class="setting-icon" href="/settings"
+        ><i class="fa-solid fa-gear"></i
+      ></a>
+    </nav>
+    <section class="content-container">
+        <h1>Update Note</h1>
+      <div id="formAdd"  class="note-container ">
+        <form action="/edit/<%= note.id %>" method="POST">
+          <div class="top-sect">
+            <input required maxlength="40" name="title" type="text" value="<%= note.title %>" placeholder="note title">
+            <button type="submit" class="save-btn"><i class="fa-solid fa-square-check"></i></button>
+          </div>
+          <div class="body-sect">
+            <textarea required maxlength="1500" name="content" id="" cols="30" rows="10" placeholder="note content">
+                <%= note.content %>
+            </textarea>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
+
+<!--
+    dark : #222b45
+    light : #DCE5F5
+    success: #55AF3F
+    info: #00507C
+    danger: #BA4854
+    warning : #C57E35
+
+-->

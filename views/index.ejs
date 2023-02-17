@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/all.min.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+    <script defer src="/js/all.min.js"></script>
+    <script defer src="/js/main.js"></script>
+    <title>Home</title>
+  </head>
+  <body>
+    <nav>
+      <h1><a class="brand" href="">NOTIFY</a></h1>
+      <a class="notes-icon" href="/notes"
+        ><i class="fa-regular fa-note-sticky"></i
+      ></a>
+      <a class="setting-icon" href="/logout"
+        ><i class="fa-solid fa-arrow-right-from-bracket"></i></a>
+    </nav>
+    <section class="content-container">
+      <div id="formAdd"  class="note-container hide">
+        <form action="/add" method="POST">
+          <div class="top-sect">
+            <input required maxlength="40" name="title" type="text" placeholder="note title">
+            
+            <button type="button" id="deleteForm">
+              <i class="fa-regular fa-trash-can"></i>
+            </button>
+            <button type="submit" class="save-btn"><i class="fa-solid fa-square-check"></i></button>
+          </div>
+          <div class="body-sect">
+            <textarea required maxlength="1500" name="content" id="" cols="30" rows="10" placeholder="note content"></textarea>
+          </div>
+        </form>
+      </div>
+      
+      <% user.notes.forEach(note => {%>
+        <div class="note-container">
+          <i id="info" data-note="<%= note.id %>"></i>
+          <div class="top-sect">
+            <h3><%= note.title %></h3>
+            <a href="/edit/<%= note.id %>" class="edit-btn"><i class="fa-solid fa-pencil"></i></a>
+            <button id="deleteBtn">
+              <a href="/delete/<%= note.id %>"><i class="fa-regular fa-trash-can"></i></a>
+            </button>
+          </div>
+          <div class="body-sect">
+            <p class="note-content">
+              <%= note.content %>
+            </p>
+          </div>
+        </div>
+      <%}); %>
+
+      <button id="addNote"><i class="fa-solid fa-plus"></i></button>
+    </section>
+  </body>
+</html>
+
+<!--
+    dark : #222b45
+    light : #DCE5F5
+    success: #55AF3F
+    info: #00507C
+    danger: #BA4854
+    warning : #C57E35
+
+-->

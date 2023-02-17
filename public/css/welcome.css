@@ -1,0 +1,105 @@
+
+/* news letter styles */
+.news-letter{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: var(--warning);
+    color: var(--dark);
+}
+
+.news-letter h2 span{
+    color: var(--info);
+    font-size: 16px;
+}
+
+.news-letter div:first-child{
+    font-size: 18px;
+    font-weight: 400;
+    
+}
+.news-letter div:first-child h2{
+    margin: 10px;   
+}
+
+.news-letter div:first-child p{
+    margin: 10px;
+    padding-top:  5px;
+
+}
+
+.news-letter div img {
+    width: 30%;
+    margin-left: 50%;
+    margin-top: 20px;
+}
+
+/* join us styles */
+.join-us {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-us h3 {
+    font-size: 40px;
+    letter-spacing: 15px;
+    margin: 20px;
+    color: var(--info);
+}
+
+
+.join-us .options{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.join-us .options a {
+    color: var(--light);
+    padding: 10px;
+    width: 30%;
+    margin: 30px;
+    text-align: center;
+    border-radius: 5px;
+    transition: .2s;
+}
+
+.join-us .options a:first-child {
+    background-color: var(--warning);
+}
+.join-us .options a:first-child:hover{
+    background-color: var(--info);
+    transition: .2s;
+}
+
+.join-us .options a:last-child {
+    background-color: var(--dark);
+}
+.join-us .options a:last-child:hover{
+    background-color: var(--danger);
+    transition: .2s;
+}
+
+@media  (max-width: 480px) {
+    .news-letter{
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+    .news-letter div img {
+         display: none;
+    }
+    .join-us .options{
+        flex-direction: column;
+        align-items: center;
+    }
+    
+}

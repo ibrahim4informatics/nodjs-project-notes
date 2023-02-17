@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Notify |  REGISTER</title>
+</head>
+<body>
+    <nav>
+        <h1><a class="brand" href="">NOTIFY</a></h1>
+    </nav>
+    <section class="spacer"></section>
+    
+    <section class="login-container">
+        <h2>REGISTER</h2>
+        <% if (msg.err.length > 0) {%>
+            <%- include("./partiale/errmsg.ejs") %>
+        <%}%>
+        <% if (msg.suc.length > 0) {%>
+            <%- include("./partiale/msgsuc.ejs") %>
+        <%}%>
+        <form method="POST" action="/auth/register">
+            <input name="email" type="email" placeholder="Email">
+            <input name="username" type="text" placeholder="username">
+            <input name="password" type="password" placeholder="Password">
+            <input  name="cpassword" type="password" placeholder="Confirme Password">
+            <div>
+                <a href="/auth/login">LOGIN</a>
+                <button type="submit">REGISTER</button>
+            </div>
+        </form>
+    </section>
+    
+</body>
+</html>

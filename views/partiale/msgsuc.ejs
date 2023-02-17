@@ -1,0 +1,21 @@
+
+<% msg.suc.forEach(err => {%>
+    <div class="suc-container">
+        <p><%= err %></p>
+    </div>
+<%}); %>
+
+<style>
+  
+    .suc-container{
+        width: 90%;
+        padding: 8px;
+        margin: 5px;
+        text-align: center;
+        color: var(--light);
+        border-radius: 4px;
+        background-color: var(--success);
+        font-size: 14px;
+        font-weight: 600;
+    }
+</style>
